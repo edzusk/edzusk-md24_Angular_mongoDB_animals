@@ -1,0 +1,39 @@
+.cardWrapper {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.animalCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:  10px;
+    background-color: #ecd892;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.animalCard__species {
+    padding: 5px 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #f0b23f;
+}
+.animalCard__breed {
+    font-size: 2rem;
+}
+
+.animalCard__bitton {
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+        transition: 0.4s;
+        scale: 1.5;
+        color: red;
+    }
+}

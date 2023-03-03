@@ -25,15 +25,21 @@ async function main() {
 }
 
 const animalSchema = new mongoose.Schema({
-  bredd: { type: String, required: true },
+  breed: { type: String, required: true },
   species: { type: String, required: true },
 });
 
 const Animal = mongoose.model("Animal", animalSchema);
 
-app.get("/animals", async (req: Request, res: Response) => {
-  const animals = await Animal.find();
-  res.send(animals);
+app.get("/animals/species/:species", async (req: Request, res: Response) => {
+  const species = req.params.species;
+  if (species === "all") {
+    const animals = await Animal.find({});
+    res.json(animals);
+  } else {
+    const animals = await Animal.find({ species: species });
+    res.json(animals);
+  }
 });
 
 app.post(

@@ -1,0 +1,10 @@
+
+<div class="container">
+    <div class="cardWrapper">
+        <div class="animalCard" *ngFor="let animal of animals">
+            <p class="animalCard__species">{{animal.species}}</p>
+            <p class="animalCard__breed">{{animal.breed}}</p>
+            <button class="animalCard__bitton" (click)="handleEvent(animal._id)">✘</button>
+        </div>
+    </div>
+</div>

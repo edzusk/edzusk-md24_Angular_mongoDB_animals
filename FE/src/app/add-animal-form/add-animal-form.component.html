@@ -1,0 +1,25 @@
+<p>add-animal-form works!</p>
+
+<div class="container">
+  <form #animal="ngForm" (ngSubmit)="handleEvent(animal)" class="form" action="">
+    <input
+      #breed="ngModel"
+      required="true"
+      minlength="2"
+      maxlength="20"
+      class="form__element"
+      placeholder="Add new animal"
+      type="text"
+      name="breed"
+      ngModel
+    />
+    <select #species="ngModel" required="true" ngModel class="form__element" name="species" id="">
+        <option value="" disabled selected>Select species</option>
+      <option value="cat">Cat</option>
+      <option value="dog">dog</option>
+    </select>
+    <button [disabled]="breed.invalid || species.invalid" class="form__element form__element--button" type="submit">
+      Add
+    </button>
+  </form>
+</div>

@@ -1,0 +1,45 @@
+.switchWrapper{
+    gap: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+    background-color: #ecd892;
+    font-size: 2rem;;
+}
+.radio_button{
+    border: 3px solid  #f0b23f;
+    background-color: #f0b23f;
+    height: 40px;
+    border-radius: 20px;
+    width: 120px;
+    position: relative;
+    cursor: pointer;
+}
+.bulet {
+    background-color: grey;
+    opacity: 0.7;
+    top:0;
+    height: 30px;
+    width: 30px;
+    border: 3px solid #000000;
+    border-radius: 50%;
+    position: absolute;
+}
+.all{
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+}
+
+.dog{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cat{
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
