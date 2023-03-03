@@ -5,7 +5,8 @@
     align-items: center;
     padding: 30px;
     background-color: #ecd892;
-    font-size: 2rem;;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 .radio_button{
     border: 3px solid  #f0b23f;
@@ -25,6 +26,7 @@
     border: 3px solid #000000;
     border-radius: 50%;
     position: absolute;
+    transition: 0.2s;
 }
 .all{
     top: 50%;
