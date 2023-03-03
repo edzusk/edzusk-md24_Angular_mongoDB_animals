@@ -1,6 +1,6 @@
 db = db.getSiblingDB('animals');
 db.createCollection('animals');
-db.recipes.insertMany([
+db.animals.insertMany([
   {
     breed: 'American Bobtail',
     species : 'cat'
@@ -8,7 +8,7 @@ db.recipes.insertMany([
 },
   {
     breed: 'Birman',
-    species : 'dog'
+    species : 'cat'
 },
   {
     breed: 'poodle',

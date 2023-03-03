@@ -1,4 +1,4 @@
-# Express Typescript Boilerplate
+
 To start developing run `npm install`
 set up mongoDB in Docker
 `docker build -t my-mongo .`
