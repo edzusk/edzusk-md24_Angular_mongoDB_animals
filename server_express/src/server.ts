@@ -31,35 +31,46 @@ const animalSchema = new mongoose.Schema({
 
 const Animal = mongoose.model("Animal", animalSchema);
 
-app.get("/animals/species/:species", async (req: Request, res: Response) => {
-  const species = req.params.species;
-  if (species === "all") {
-    const animals = await Animal.find({});
-    res.json(animals);
-  } else {
-    const animals = await Animal.find({ species: species });
-    res.json(animals);
-  }
-});
-
-app.post(
-  "/animals",
-  async (req: Request<undefined, undefined, Animal>, res: Response) => {
-    const animal = req.body;
-    const result = await Animal.create(animal);
-    res.send(result);
+app.get(
+  "/animals/species/:species",
+  async ({ params }: Request, res: Response) => {
+    try {
+      const animalsTofind =
+        params.species === "all" ? {} : { species: params.species };
+      const animals = await Animal.find(animalsTofind);
+      res.status(200).json(animals);
+    } catch (error) {
+      res.status(500).json(error);
+    }
   }
 );
 
-app.delete("/animals/:id", async (req: Request, res: Response) => {
-  const id = req.params.id;
-  const result = await Animal.deleteOne({ _id: id });
-  res.send(result);
+app.post(
+  "/animals",
+  async ({ body }: Request<undefined, undefined, Animal>, res: Response) => {
+    try {
+      const result = await Animal.create(body);
+      res.status(200).send(result);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
+);
+
+app.delete("/animals/:id", async ({ params }: Request, res: Response) => {
+  try {
+    const result = await Animal.deleteOne({ _id: params.id });
+    res.status(200).send(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
-app.put("/animals/:id", async (req: Request, res: Response) => {
-  const id = req.params.id;
-  const animal = req.body;
-  const result = await Animal.updateOne({ _id: id }, animal);
-  res.send(result);
+app.put("/animals/:id", async ({ params, body }: Request, res: Response) => {
+  try {
+    const result = await Animal.updateOne({ _id: params.id }, body);
+    res.status(200).send(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
