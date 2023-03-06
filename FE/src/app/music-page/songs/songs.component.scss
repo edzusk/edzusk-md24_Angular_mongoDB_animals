@@ -6,7 +6,9 @@
     background-color: rgb(194, 179, 147);
     padding: 20px;
     border-radius: 10px;
+    transition: 0.5s;
     &:hover{
+        transition: 0.5s;
         scale: 1.3;
     }
 }
