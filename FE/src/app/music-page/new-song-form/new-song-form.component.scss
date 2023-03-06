@@ -1,0 +1,46 @@
+.songForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    background-color: rgb(194, 179, 147);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.songForm__element {
+    outline: none;
+    padding: 5px 10px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #f0b23f;
+    font-size: 1.5rem;
+    font-family: 'Permanent Marker', sans-serif;
+    background-image: linear-gradient(to right, red 10px, transparent 0);
+}
+
+.button {
+    font-family: 'Permanent Marker', sans-serif;
+    background: none;
+    border: none;
+    color: green;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.6s;
+
+    &:hover {
+        scale: 1.5;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        color: red;
+        font-size: 0.8rem;
+    }
+}
+.valid {
+    padding-left: 10px;
+    background-image: linear-gradient(to right, green 10px, transparent 0);
+}

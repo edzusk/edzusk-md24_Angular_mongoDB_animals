@@ -1,7 +1,6 @@
-.switchWrapper{
-    gap: 20px;
+.header{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 30px;
     background-color: #ecd892;
@@ -44,4 +43,8 @@
     top: 50%;
     right: 0;
     transform: translate(0, -50%);
+}
+.switchWrapper {
+    display: flex;
+    align-items: center;
 }

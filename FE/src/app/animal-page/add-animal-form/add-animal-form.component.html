@@ -1,13 +1,13 @@
 
 <div class="container">
-  <form #animal="ngForm" (ngSubmit)="handleEvent(animal)" class="form" action="">
+  <form #animalForm="ngForm" (ngSubmit)="handleEvent(animalForm)" class="form" action="">
     <input
       #breed="ngModel"
       required="true"
       minlength="2"
       maxlength="20"
       class="form__element"
-      placeholder="Add new animal"
+      placeholder="Add new breed"
       type="text"
       name="breed"
       ngModel

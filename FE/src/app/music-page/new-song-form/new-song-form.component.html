@@ -1,0 +1,8 @@
+
+<div class="container">
+    <form class="songForm" #songForm="ngForm" (ngSubmit)="handleEvent(songForm)" action="">
+        <input [class.valid]="!artist.invalid" class="songForm__element" #artist="ngModel" name="artist" required minlength="2" maxlength="20" placeholder="Artist..." type="text" ngModel>
+        <input [class.valid]="!title.invalid" class="songForm__element" #title="ngModel" name="title" required minlength="2" maxlength="20" placeholder="Title" type="text" ngModel>
+        <button class="button" [disabled]="artist.invalid || title.invalid" type="submit"> ADD</button>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="header">
+        <nav class="nav">
+            <a class="button"
+               routerLink="/">
+               Home
+            </a> |
+            <a class="button"
+               routerLink="/animals">
+               Cats & Dogs
+            </a>
+          </nav>
+    </div>
+</div>
+<app-new-song-form (submitEvent)="addSong($event)"></app-new-song-form>
+<app-songs (deleteSong)="removeSong($event)" [songs]="songs$"></app-songs>

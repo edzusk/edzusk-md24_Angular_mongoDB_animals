@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="wrapper">
+        <div *ngIf="songs | async as songs" class="row justify-content-center g-3 ">
+            <div *ngFor="let song of songs" class="songCard col-9">
+                <div class="songCard__content">
+                    <span class="songInfo" >{{song.artist}}</span>
+                    <span class="songInfo" >{{song.title}}</span>
+                </div>
+                <button class="button" (click)="handleEvent(song)">remove song</button>
+            </div>
+        </div>
+    </div>
+</div>

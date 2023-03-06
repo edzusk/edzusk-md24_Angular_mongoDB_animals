@@ -1,0 +1,20 @@
+
+<div class="container">
+    <div class="header">
+        <nav class="nav">
+            <a class="button"
+               routerLink="/">
+               Home
+            </a> |
+            <a class="button"
+               routerLink="/music">
+               Songs
+            </a>
+          </nav>
+        <div class="switchWrapper">
+            <span>{{radioPostition}}</span>
+            <button (click)="handleEvent()" class="radio_button"><span class="bulet"
+                    [ngClass]="radioPostition"></span></button>
+        </div>
+    </div>
+</div>
